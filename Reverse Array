@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std; // Normal Approach
+
+vector<int> ReverseArray(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> temp;
+
+    for (int i = 0; i < n; i++) {
+        temp.push_back(arr[n - i - 1]); // Append elements in reverse order
+    }
+
+    for (int i = 0; i < n; i++) {
+        arr[i] = temp[i];
+    }
+
+    return arr;
+}
+
+
+
+
+
+
+// By using 2 pointers
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void ReverseArrays(vector<int> &arr){
+   int n = arr.size();
+  // intialise pointers
+  int i = 0;
+  int j = n-1;
+
+  while(i<j){
+    swap(arr[i], arr[j]);
+    i++;
+    j--; // incrementing and decrementing both sides using 2 pointers
+  }
+
+  
+  
+}
+
+
+
+
+
+
+
+
+// Other Method by traversing till n/2
+#include <bits/stdc++.h>
+using namespace std;
+
+void reverse(vector<int> &arr){
+  int n = arr.size();
+  for (int i = 0; i<n/2; i++){
+    swap(arr[i], arr[n-i-1]);
+  }
+}
